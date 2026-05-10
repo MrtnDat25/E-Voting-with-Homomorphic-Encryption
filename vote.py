@@ -108,7 +108,7 @@ def main():
     with open("encrypted_vote.txt" , "a") as f:
         f.write(f"{encrypted_ballot}\n")
 
-    with open("bullentin_board.txt" , "a") as f:
+    with open("bulletin_board.txt" , "a") as f:
         f.write(f"{vote_id} {encrypted_ballot}\n")
 
     #update status
