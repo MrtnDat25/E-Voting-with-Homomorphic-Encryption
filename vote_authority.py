@@ -3,8 +3,17 @@ import random
 import math
 from config import *
 
-#function math
 
+#secure
+from Crypto.Util.number import getPrime
+from secrets import randbelow
+
+p = getPrime(512)
+q = getPrime(512)
+
+
+
+#function math
 def gcd(a, b):
     while b:
         a , b = b , a % b
@@ -132,7 +141,6 @@ def decrypt_final_result():
     print("\n" + "= "*30)
     print("Final Voting Results")
     print("="*30)
-    max_votes = max(results)
     for i in range(NUM_CANDIDATES):
         count = (decrypt_sum >> (i * NUM_BITS)) & mask
         results.append(count)
@@ -142,25 +150,27 @@ def decrypt_final_result():
         print("-"*30)
 
         #logic
-        
-
-        if max_votes == 0:
-            print("Result: No one voted")
-        else:
+    max_votes = max(results)
+    if max_votes == 0:
+        print("Result: No one voted")
+    else:
             # draw situation
-            winners = [i for i , votes in enumerate(results) if votes == max_votes]
+        winners = [
+                    i for i , votes in enumerate(results) 
+                    if votes == max_votes
+                  ]
 
-            if len(winners) > 1:
-                winners_name = ", ".join([f"Candidate {w}" for w in winners])
+        if len(winners) > 1:
+            winners_name = ", ".join([f"Candidate {w}" for w in winners])
 
-                print(f"DRAW Result: {winners_name}")
-                print(f"With the number of votes: {max_votes}")
+            print(f"DRAW Result: {winners_name}")
+            print(f"With the number of votes: {max_votes}")
 
-            else:
-                print(f"Congratulations: The candidate {winners[0]} is winner")
-                print(f"Total of votes : {max_votes}")
+        else:
+            print(f"Congratulations: The candidate {winners[0]} is winner")
+            print(f"Total of votes : {max_votes}")
 
-        print("="*30)
+    print("="*30)
 
 def test_paillier():
     print("\n" + "-"*15 + " Testing " + "-"*15)
