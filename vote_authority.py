@@ -212,3 +212,21 @@ if __name__ == '__main__':
             test_paillier()
     elif choice == '2':
         decrypt_final_result()
+
+
+
+
+#review
+
+    """
+prime generation yếu --> crypto
+store private key
+authentication vote --> check validation of voter (id --> age, digital signature, token , blind signature )
+    digital --> defense against fake vote
+    ZIKP --> check vote , no reveal vote
+
+recure random ( random.randint ) --> from sercets improt randbelow
+proccessing from db not txt
+
+    """
+    

@@ -3,33 +3,44 @@ import os
 from config import *
 
 def display_bulletin_board():
-    print("\n" + "="*20 +"Election BULLETIN BOARD " + "="*20)
+
+    print("\n" + "=" * 20 + " ELECTION BULLETIN BOARD " + "=" * 20)
 
     if not os.path.exists("bulletin_board.txt"):
-        print("\nThe bullentin board is currently blank. No vote(s) has been recoreded yet")
 
-        print("="*40)
+        print("\nThe bulletin board is empty.")
+        print("=" * 60)
         return
-    
-    print(f"{'Voted ID': <40} | {'Encrypted ballot':<50}")
-    print("="*40)
 
-    with open("bulletin_board.txt", 'r') as f:
+    with open("bulletin_board.txt", "r") as f:
         lines = f.readlines()
-        if not lines:
-            print("No data")
-        else:
-            for line in lines:
-                parts = line.strip().split()
-                if len(parts) >=2 :
-                    v_id = parts[0]
 
-                    #
-                    enc_val = parts[1]
-                    display_enc = (enc_val[:45] + '...') if len(enc_val) >45 else enc_val
-                    print(f"{v_id:<40} | {display_enc:<50}")
-    print("="*50)
-    print(f"\nTotal number of votes currently on the bulletin board: {len(lines)}")
+    if not lines:
+        print("No ballots recorded.")
+        return
+
+    print(f"{'Vote ID':<40} | {'Encrypted Ballot':<50}")
+    print("=" * 95)
+
+    for line in lines:
+
+        parts = line.strip().split(maxsplit=1)
+
+        if len(parts) == 2:
+
+            vote_id, enc_val = parts
+
+            display_enc = (
+                enc_val[:45] + "..."
+                if len(enc_val) > 45
+                else enc_val
+            )
+
+            print(f"{vote_id:<40} | {display_enc:<50}")
+
+    print("=" * 95)
+
+    print(f"\nTotal ballots: {len(lines)}")
 
 
 def search_vote():
