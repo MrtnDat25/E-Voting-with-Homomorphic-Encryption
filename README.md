@@ -19,13 +19,21 @@ The project simulates a simplified real-world homomorphic voting architecture in
 #  Main Features
 
  Paillier Homomorphic Encryption.
+
  Secure encrypted ballots.
+
  Homomorphic tallying.
+
  Election authority separation.
+
  Public bulletin board.
+
  Vote receipt verification.
+
  End-of-election workflow.
+
  Bit-packing vote encoding.
+ 
 
 ---
 
