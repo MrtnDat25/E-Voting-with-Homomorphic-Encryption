@@ -18,14 +18,14 @@ The project simulates a simplified real-world homomorphic voting architecture in
 
 #  Main Features
 
-✅ Paillier Homomorphic Encryption
-✅ Secure encrypted ballots
-✅ Homomorphic tallying
-✅ Election authority separation
-✅ Public bulletin board
-✅ Vote receipt verification
-✅ End-of-election workflow
-✅ Bit-packing vote encoding
+ Paillier Homomorphic Encryption
+ Secure encrypted ballots
+ Homomorphic tallying
+ Election authority separation
+ Public bulletin board
+ Vote receipt verification
+ End-of-election workflow
+ Bit-packing vote encoding
 
 ---
 
@@ -200,29 +200,29 @@ This will:
 
 ---
 
-#🔒 Security Concepts
+# Security Concepts
 
 This project demonstrates:
 
-## ✔️ Ballot Privacy
+##  Ballot Privacy
 
 Votes remain encrypted during tallying.
 
 ---
 
-## ✔️ Homomorphic Counting
+##  Homomorphic Counting
 
 Server computes vote totals without decrypting ballots.
 
 ---
 
-## ✔️ Public Verification
+##  Public Verification
 
 Voters can verify their ballots using the bulletin board.
 
 ---
 
-## ✔️ Separation of Authority
+##  Separation of Authority
 
 The tally server cannot decrypt votes.
 
@@ -243,7 +243,7 @@ The project does NOT yet include:
 
 ---
 
-#📚 Technologies Used
+# Technologies Used
 
 * Python
 * Paillier Homomorphic Encryption
@@ -252,7 +252,7 @@ The project does NOT yet include:
 
 ---
 
-# 🗳️ Example Voting Flow
+#  Example Voting Flow
 
 ```text
 Vote YES -> Encrypt -> Send Ciphertext
@@ -276,13 +276,13 @@ After decryption:
 
 ---
 
-# 👨‍💻 Author
+# 👨 Author
 
 Dinh Quoc Dat - CT07N0107
 Vietnam Academy of Cryptography Techniques
 ---
 
-# 📌 Future Improvements
+#  Future Improvements
 
 * GUI voting interface
 * SQLite/MySQL database
